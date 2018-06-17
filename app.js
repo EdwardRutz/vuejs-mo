@@ -17,6 +17,12 @@ const example = new Vue({
     img: {
       src: 'https://placeimg.com/200/200/animals',
       alt: 'Picture of animals'
+    },
+    showDetail: false
+  },
+  methods: {
+    toggleDetails: function () {
+      this.showDetail = !this.showDetail;
     }
   }
 });
