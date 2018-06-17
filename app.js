@@ -45,3 +45,20 @@ const book = new Vue({
     }
   }
 });
+
+const colorsOfTheRainbow = [
+  'red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+
+new Vue({
+  el: '#colors',
+  data: {
+    rainbow: colorsOfTheRainbow,
+    img: {
+      src: 'http://4.bp.blogspot.com/-7lasblsGDmc/VKBYGT_6PhI/AAAAAAAAyIo/NkSHktp6XNo/s1600/Rainbow%2Bending%2Bin' +
+      '%2BTramp%2BHarbor%2Bin%2Bthe%2BPuget%2BSound%2Bnear%2BWest%2BSeattle%2C%2BWA.jpg',
+      alt: "Picture of a rainbow"
+    }
+  }
+});
+
+

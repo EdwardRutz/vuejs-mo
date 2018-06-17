@@ -13,10 +13,23 @@
     <p> {{ message }}</p>
 </div>
 
+<h2>Vue JS Notes</h2>
+<ul>
+    <li>See code and comments for examples</li>
+    <li>Binding with v-text, v-bind</li>
+    <li>Inserting hyper-links and images from data in a Vue instance</li>
+    <li>Shorthand for v-bind is using just a colon (:src or :alt)</li>
+    <li>Using v-on, v-show for events</li>
+    <li>@click is shorthand for v-on:click</li>
+    <li>v-show, hide if false, show if true</li>
+    <li>javascript expression can be inserted directly into the vue events</li>
+    <li>Using v-for to loop through an arrray of colors.</li>
+</ul>
+
 <!-- Binding with v-text, v-bind -->
 <!-- Shorthand for v-bind is using just a colon (:src or :alt) -->
 <div id="example">
-    <h1>Cats</h1>
+    <h1>Cats and v-bind</h1>
     <h3> {{ name + title }}</h3>
     <p v-on:click="toggleDetails">[Click for Details]</p>
     <div id="catDetail" v-show="showDetail">
@@ -31,10 +44,10 @@
 <!-- @click is shorthand for v-on:click -->
 <!-- v-show, hide if false, show if true -->
 <div id="book">
-    <h1>Books</h1>
+    <h1>Books and v-on</h1>
     <h3>{{ title }}</h3>
     <p v-on:click="toggleDetails">[Click for Details]</p>
-    <!--The javascript exrpession can be inserted directly into the vue events -->
+    <!-- javascript expression can be inserted directly into the vue events -->
     <!--this is not needed since Vue knows what is referenced -->
     <!--<h3 v-on:click="showDetail = !showDetail">{{ title }}</h3>-->
     <div id="bookDetail" v-show="showDetail">
@@ -44,7 +57,27 @@
     </div>
 </div>
 
+<div id="colors">
 
+    <!-- v-for, v-bind: style-->
+    <h1>Rainbow Loops</h1>
+    <ul>
+        <li>Using v-for to loop through an arrray of colors.</li>
+        <code>v-for="item in rainbow"</code>
+        <li>Place v-for on the element you want to iterate </li>
+        <li>v-for accepts an optional index variable</li>
+        <code>v-for="(item, index) in rainbow">{{index}}</code>
+    </ul>
+    <img v-bind:src="img.src" v-bind:alt="img.alt" height="300" width="300">
+    <ul>
+        <!-- The first item is the style element, the second item is the item in our array -->
+        <li v-bind:style="{color:item}" v-for="(item, index) in rainbow">{{index}} - {{item}}</li>
+    </ul>
+</div>
+
+
+<br><br>
+<footer></footer>
 <!-- CDN to use Vue -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
