@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <title>Hello Vue!</title>
+</head>
+<body>
+    <div id="helloVue">
+        <h1> {{ title }}</h1>
+        <p> {{ message }}</p>
+    </div>
+
+    <!-- Binding with v-text, v-bind -->
+    <!-- Shorthand for v-bind is using just a colon (:src or :alt) -->
+    <div id="example">
+        <h1>Cats</h1>
+        <h3> {{ name + title }}</h3>
+        <h3> {{ name.toUpperCase()}}  {{title }}</h3>
+        <img v-bind:src="img.src" v-bind:alt="img.alt">
+        <h3 v-text="title2"></h3>
+        <p> {{ message }}</p>
+    </div>
+
+    <!-- Using v-on, v-show for events -->
+    <!-- @click is shorthand for v-on:click -->
+    <!-- v-show, hide if false, show if true -->
+    <div id="book">
+        <h2>Books</h2>
+        <h3>{{ title }}</h3>
+        <p v-on:click="toggleDetails">[Click for Book Details]</p>
+        <!--The javascript exrpession can be inserted directly into the vue events -->
+        <!--this is not needed since Vue knows what is referenced -->
+        <!--<h3 v-on:click="showDetail = !showDetail">{{ title }}</h3>-->
+        <div id="bookDetail" v-show="showDetail">
+            <p>Author:  {{ author }}</p>
+            <p>Notes:  {{ summary }}</p>
+        <p v-on:click="sayHello">[Click for Recommendation]</p>
+        </div>
+    </div>
+
+
+
+    <!-- CDN to use Vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- Connect to app.js -->
+    <script src="app.js"></script>
+</body>
+</html>
